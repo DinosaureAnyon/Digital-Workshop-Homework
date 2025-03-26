@@ -45,12 +45,13 @@ class ExponentialFunction:
         plt.legend()
         plt.show()
 
+
 if __name__ == "__main__":
     exp_func = ExponentialFunction(a=2)
 
-    print(f"f(0) = {exp_func(0)}")
-    print(f"f'(0) = {exp_func.derivative(0)}")
-    print(f"f(1) = {exp_func(1):.4f}")
-    print(f"f'(1) = {exp_func.derivative(1):.4f}")
+    print(f"f(0) = {exp_func(0)}")  # 2.0
+    print(f"f'(0) = {exp_func.derivative(0)}")  # 2.0
+    print(f"f(1) = {exp_func(1):.4f}")  # ≈5.4366
+    print(f"f'(1) = {exp_func.derivative(1):.4f}")  # ≈5.4366
 
     exp_func.plot()
