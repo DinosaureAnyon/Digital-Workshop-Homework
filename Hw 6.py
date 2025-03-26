@@ -11,7 +11,6 @@ class Derivative:
         """Дескриптор для доступа к производной"""
         if obj is None:
             return self
-        # Создаем новую функцию, которая запоминает obj (ExponentialFunction)
         return lambda x: (obj(x + self.h) - obj(x - self.h)) / (2 * self.h)
 
 
@@ -46,17 +45,12 @@ class ExponentialFunction:
         plt.legend()
         plt.show()
 
-
-# Пример использования
 if __name__ == "__main__":
-    # Создаем экспоненциальную функцию с коэффициентом 2
     exp_func = ExponentialFunction(a=2)
 
-    # Тестируем вычисления
-    print(f"f(0) = {exp_func(0)}")  # 2.0
-    print(f"f'(0) = {exp_func.derivative(0)}")  # 2.0
-    print(f"f(1) = {exp_func(1):.4f}")  # ≈5.4366
-    print(f"f'(1) = {exp_func.derivative(1):.4f}")  # ≈5.4366
+    print(f"f(0) = {exp_func(0)}")
+    print(f"f'(0) = {exp_func.derivative(0)}")
+    print(f"f(1) = {exp_func(1):.4f}")
+    print(f"f'(1) = {exp_func.derivative(1):.4f}")
 
-    # Строим графики
     exp_func.plot()
