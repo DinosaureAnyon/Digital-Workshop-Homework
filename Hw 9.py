@@ -1,3 +1,4 @@
+# 1
 import math
 
 
@@ -50,3 +51,32 @@ if __name__ == "__main__":
         print("Ошибка:", e)
     except NotImplementedError as e:
         print("Ошибка:", e)
+
+
+# 2
+class Animal:
+    def sound(self):
+        return "Животное издает звук"
+
+
+class Dog(Animal):
+    def sound(self):
+        return "Гав-гав"
+
+
+class Cat(Animal):
+    def sound(self):
+        return "Мяу"
+
+
+class Cow(Animal):
+    def sound(self):
+        return "Муу"
+
+
+if __name__ == "__main__":
+    animals = [Dog(), Cat(), Cow(), Animal()]
+    
+    print("Какие звуки издают животные:")
+    for animal in animals:
+        print(f"{animal.__class__.__name__}: {animal.sound()}")
